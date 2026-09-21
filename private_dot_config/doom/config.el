@@ -49,6 +49,7 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 (setq org-cite-global-bibliography '("~/Documents/Bibliography/Zotero.bib"))
+(setq org-agenda-files '("~/Sync/agenda/Personal Todo.org"))
 (setq org-pretty-entities t)
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
