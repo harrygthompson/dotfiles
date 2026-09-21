@@ -1,0 +1,66 @@
+[user]
+    name = Harry G. Thompson
+    email = harygthompson@postoe.net
+
+[init]
+    defaultBranch = main
+
+[core]
+    editor = kate --block
+    autocrlf = input
+    whitespace = trailing-space,space-before-tab
+
+[color]
+    ui = auto
+
+[column]
+    ui = auto
+
+[branch]
+    sort = -committerdate
+
+[tag]
+    sort = version:refname
+
+[diff]
+    algorithm = histogram
+    colorMoved = zebra
+    mnemonicPrefix = true
+
+[merge]
+    conflictStyle = zdiff3
+
+[pull]
+    rebase = true
+
+[push]
+    default = simple
+    autoSetupRemote = true
+
+[fetch]
+    prune = true
+    pruneTags = true
+
+[rerere]
+    enabled = true
+    autoupdate = true
+
+[status]
+    branch = true
+    showStash = true
+
+[log]
+    abbrevCommit = true
+
+[help]
+    autocorrect = prompt
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    light = false
+    side-by-side = true
+    line-numbers = true
+```
