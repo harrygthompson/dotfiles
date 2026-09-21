@@ -81,4 +81,7 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-
+(after! langtool
+  (setq langtool-bin nil
+        langtool-java-classpath nil
+        langtool-language-tool-jar "/usr/share/languagetool/languagetool-commandline.jar"))
