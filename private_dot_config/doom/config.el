@@ -96,3 +96,13 @@
         org-roam-ui-follow t
         org-roam-ui-update-on-save t
         org-roam-ui-open-on-start t))
+
+        ;;; Bib stuff
+
+(setq org-cite-csl-styles-dir "~/Documents/Bibliography/CSLFiles")
+
+(setopt bibtex-completion-bibliography '("~/Documents/Bibliography/Zotero.bib")
+        bibtex-completion-library-path '("~/Documents/Bibliography/PDFS+XOPPS/"))
+
+(setopt citar-bibliography '("~/Documents/Bibliography/Zotero.bib")
+        citar-library-paths '("~/Documents/Bibliography/PDFS+XOPPS/"))
