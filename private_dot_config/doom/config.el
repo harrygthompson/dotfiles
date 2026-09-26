@@ -106,3 +106,5 @@
 
 (setopt citar-bibliography '("~/Documents/Bibliography/Zotero.bib")
         citar-library-paths '("~/Documents/Bibliography/PDFS+XOPPS/"))
+
+(setq citar-open-entry-function 'citar-open-entry-in-zotero)
