@@ -108,3 +108,13 @@
         citar-library-paths '("~/Documents/Bibliography/PDFS+XOPPS/"))
 
 (setq citar-open-entry-function 'citar-open-entry-in-zotero)
+
+(after! org-agenda
+  ;; Only show the next future repeat, not one per day
+  (setq org-agenda-show-future-repeats 'next)
+
+  ;; Show only the latest overdue repeat, not every missed one
+  (setq org-agenda-prefer-last-repeat t)
+
+  ;; Stop showing overdue scheduled items after 3 days
+  (setq org-scheduled-past-days 3))
