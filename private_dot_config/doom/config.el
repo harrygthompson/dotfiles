@@ -97,7 +97,7 @@
         org-roam-ui-update-on-save t
         org-roam-ui-open-on-start t))
 
-        ;;; Bib stuff
+;;; Bib stuff
 
 (setq org-cite-csl-styles-dir "~/Documents/Bibliography/CSLFiles")
 
@@ -108,6 +108,17 @@
         citar-library-paths '("~/Documents/Bibliography/PDFS+XOPPS/"))
 
 (setq citar-open-entry-function 'citar-open-entry-in-zotero)
+
+;;; Habits
+
+(after! org
+  (add-to-list 'org-modules 'org-habit)
+  (setq org-habit-graph-column 60
+        org-habit-preceding-days 21
+        org-habit-following-days 7
+        org-habit-show-habits-only-for-today nil))
+
+;;; Agenda
 
 (after! org-agenda
   ;; Only show the next future repeat, not one per day
