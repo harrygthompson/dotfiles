@@ -10,3 +10,5 @@ abbr u 'cd ..'
 abbr ranch 'cd ~/GNU-Ranch/'
 abbr docs 'cd ~/Documents/'
 abbr rm 'rm -i'
+
+set -U fish_greeting
