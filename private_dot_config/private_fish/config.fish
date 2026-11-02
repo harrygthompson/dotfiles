@@ -12,3 +12,4 @@ abbr docs 'cd ~/Documents/'
 abbr rm 'rm -i'
 
 set -U fish_greeting
+fish_config theme choose None
