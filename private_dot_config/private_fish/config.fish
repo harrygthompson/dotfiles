@@ -13,3 +13,6 @@ abbr rm 'rm -i'
 
 set -g fish_greeting ""
 fish_config theme choose None
+if status --is-interactive && type -q fastfetch
+    fastfetch
+end
