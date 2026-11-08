@@ -109,15 +109,18 @@
 (setq citar-open-entry-function 'citar-open-entry-in-zotero)
 
 ;;; Habits
+;;; Clocking
 
 (after! org
-  (add-to-list 'org-modules 'org-habit)
-  (setq org-habit-graph-column 60
-        org-habit-preceding-days 21
-        org-habit-following-days 7
-        org-habit-show-habits-only-for-today nil))
+  (setq org-clock-mode-line-total 'today)
+  (setq org-clock-in-resume t)
+  (setq org-clock-persist 'history)
+  (org-clock-persistence-insinuate)
+  (setq org-clock-out-remove-zero-time-clocks t))
 
-;;; Agenda
+;; Auto clock-out at 23:59 so a forgotten clock doesn't run overnight
+(run-at-time "23:59" (* 24 60 60)
+             (lambda () (when (org-clocking-p) (org-clock-out))))
 
 (after! org-agenda
   ;; Only show the next future repeat, not one per day
