@@ -123,11 +123,13 @@
              (lambda () (when (org-clocking-p) (org-clock-out))))
 
 (after! org-agenda
-  ;; Only show the next future repeat, not one per day
-  (setq org-agenda-show-future-repeats 'next)
-
-  ;; Show only the latest overdue repeat, not every missed one
-  (setq org-agenda-prefer-last-repeat t)
-
-  ;; Stop showing overdue scheduled items after 3 days
-  (setq org-scheduled-past-days 3))
+        (setq org-habit-graph-column 60)
+        (org-agenda-columns-auto-skip-marker)
+        (org-agenda-sorting-strategy
+        '((agenda habit-down time-up    priority-down category-keep)
+                (todo priority-down category-keep)
+                (tags priority-down category-keep)
+                (search category-keep))))
+        (setq org-agenda-show-future-repeats 'next)
+        (setq org-agenda-prefer-last-repeat t)
+        (setq org-scheduled-past-days 3)))
