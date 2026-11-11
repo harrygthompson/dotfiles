@@ -123,13 +123,7 @@
              (lambda () (when (org-clocking-p) (org-clock-out))))
 
 (after! org-agenda
-        (setq org-habit-graph-column 60)
-        (org-agenda-columns-auto-skip-marker)
-        (org-agenda-sorting-strategy
-        '((agenda habit-down time-up    priority-down category-keep)
-                (todo priority-down category-keep)
-                (tags priority-down category-keep)
-                (search category-keep)))
+        (add-to-list 'org-modules 'org-habit t)
         (setq org-agenda-show-future-repeats 'next)
         (setq org-agenda-prefer-last-repeat t)
         (setq org-scheduled-past-days 3))
