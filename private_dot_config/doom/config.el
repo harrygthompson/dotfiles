@@ -117,4 +117,5 @@
         '((agenda time-up priority-down category-keep)
           (todo priority-down category-keep)
           (tags priority-down category-keep)
-          (search category-keep))))
+          (search category-keep)))
+          (setq org-deadline-warning-days 0))
