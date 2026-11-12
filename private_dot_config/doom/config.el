@@ -109,21 +109,7 @@
 (setq citar-open-entry-function 'citar-open-entry-in-zotero)
 
 ;;; Habits
-;;; Clocking
 
-(after! org
-  (setq org-clock-mode-line-total 'today)
-  (setq org-clock-in-resume t)
-  (setq org-clock-persist 'history)
-  (org-clock-persistence-insinuate)
-  (setq org-clock-out-remove-zero-time-clocks t))
-
-;; Auto clock-out at 23:59 so a forgotten clock doesn't run overnight
-(run-at-time "23:59" (* 24 60 60)
-             (lambda () (when (org-clocking-p) (org-clock-out))))
 
 (after! org-agenda
-        (add-to-list 'org-modules 'org-habit t)
-        (setq org-agenda-show-future-repeats 'next)
-        (setq org-agenda-prefer-last-repeat t)
-        (setq org-scheduled-past-days 3))
+        (add-to-list 'org-modules 'org-habit t))
