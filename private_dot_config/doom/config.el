@@ -112,4 +112,9 @@
 
 
 (after! org-agenda
-        (add-to-list 'org-modules 'org-habit t))
+        (add-to-list 'org-modules 'org-habit t)
+        (setq org-agenda-sorting-strategy
+        '((agenda time-up priority-down category-keep)
+          (todo priority-down category-keep)
+          (tags priority-down category-keep)
+          (search category-keep))))
