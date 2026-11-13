@@ -2,8 +2,9 @@ if status is-interactive
 # Commands to run in interactive sessions can go here
 end
 
-set -gx VISUAL "emacs -nw"
 set -g fish_history_size 2000
+set -gx EDITOR "kate --block"
+set -gx VISUAL "kate --block"
 
 # your aliases
 abbr u 'cd ..'
