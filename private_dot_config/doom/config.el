@@ -113,9 +113,14 @@
 
 (after! org-agenda
         (add-to-list 'org-modules 'org-habit t)
+
         (setq org-agenda-sorting-strategy
         '((agenda time-up priority-down category-keep)
           (todo priority-down category-keep)
           (tags priority-down category-keep)
           (search category-keep)))
-          (setq org-deadline-warning-days 0))
+          (setq org-deadline-warning-days 0)
+
+        ((add-to-list 'org-agenda-custom-commands
+                '(("d" "Daily Agenda"
+                ((agenda "" ((org-agenda-span 'day)))))))))
