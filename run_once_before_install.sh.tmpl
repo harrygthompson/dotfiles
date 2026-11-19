@@ -1,4 +1,4 @@
-#!/bin/bash
+    #!/bin/bash
 set -euo pipefail
 
 {{ if eq .chezmoi.osRelease.id "tuxedo" -}}
@@ -20,6 +20,7 @@ flatpaks=(
     com.valvesoftware.Steam
     com.discordapp.Discord
     org.zotero.Zotero
+    net.ankiweb.Anki
 )
 
 for app_id in "${flatpaks[@]}"; do
