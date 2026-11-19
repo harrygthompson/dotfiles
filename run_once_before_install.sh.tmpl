@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-{{ if eq .chezmoi.osRelease.id "TUXEDO OS" -}}
+{{ if eq .chezmoi.osRelease.id "tuxedo" -}}
 # TUXEDO OS
 sudo apt-get update
 sudo apt-get install -y emacs
@@ -16,14 +16,14 @@ exit 1
 {{ end }}
 
 # Install Flatpak applications
-FLATPAKS=(
+flatpaks=(
     com.valvesoftware.Steam
     com.discordapp.Discord
     org.zotero.Zotero
 )
 
-for app in "${FLATPAKS[@]}"; do
-    flatpak install --user --assumeyes --or-update flathub "$app"
+for app_id in "${flatpaks[@]}"; do
+    flatpak install --assumeyes "$app_id"
 done
 
 echo "Package installation complete!"
