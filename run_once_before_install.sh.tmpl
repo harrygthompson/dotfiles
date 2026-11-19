@@ -1,0 +1,29 @@
+#!/bin/bash
+set -euo pipefail
+
+{{ if eq .chezmoi.osRelease.id "TUXEDO OS" -}}
+# TUXEDO OS
+sudo apt-get update
+sudo apt-get install -y emacs
+
+{{ else if hasPrefix "opensuse" .chezmoi.osRelease.id -}}
+# openSUSE
+sudo zypper --non-interactive install emacs
+
+{{ else -}}
+echo "Unsupported distribution: {{ .chezmoi.osRelease.id }}"
+exit 1
+{{ end }}
+
+# Install Flatpak applications
+FLATPAKS=(
+    com.valvesoftware.Steam
+    com.discordapp.Discord
+    org.zotero.Zotero
+)
+
+for app in "${FLATPAKS[@]}"; do
+    flatpak install --user --assumeyes --or-update flathub "$app"
+done
+
+echo "Package installation complete!"
